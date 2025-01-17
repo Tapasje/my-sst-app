@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+.npm
+
+# Testing
+coverage
+
+# Production
+build
+dist
+.sst
+.open-next
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# SST
+.sst.config.*.mjs
+.build
+.sst
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+tsconfig.tsbuildinfo
+.tsconfig.json.temp
+*.js.map
+*.d.ts.map
+
+# Optional eslint cache
+.eslintcache
