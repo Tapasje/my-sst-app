@@ -2,13 +2,28 @@
 /* tslint:disable */
 /* eslint-disable */
 /* deno-fmt-ignore-file */
-import "sst"
-export {}
+
 declare module "sst" {
   export interface Resource {
+    "MyApi": {
+      "type": "sst.aws.ApiGatewayV2"
+      "url": string
+    }
+    "MyBucket": {
+      "name": string
+      "type": "sst.aws.Bucket"
+    }
     "MyWeb": {
       "type": "sst.aws.StaticSite"
       "url": string
     }
+    "TestTable": {
+      "name": string
+      "type": "sst.aws.Dynamo"
+    }
   }
 }
+/// <reference path="sst-env.d.ts" />
+
+import "sst"
+export {}

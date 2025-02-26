@@ -1,4 +1,6 @@
-const domain = "portal.oncosignal.com";
+import { getDomainConfig } from "../lib/utils";
+
+const { domain } = await getDomainConfig();
 
 export const api = new sst.aws.ApiGatewayV2("MyApi", {
     accessLog: {
@@ -6,9 +8,9 @@ export const api = new sst.aws.ApiGatewayV2("MyApi", {
     },
     domain: {
         name: `api.${domain}`,
-        path: "",
+        path: "v1",
     },
 });
-api.route("GET /", {
-    handler: "packes/functions/src/api.handler",
+api.route("GET /", "packages/functions/src/getItems.handler", {
+    auth: { iam: true }
 });
